@@ -44,8 +44,6 @@ punching.onended = function () {
     isVidRunning = false;
 };
 
-toggleImage(false);
-
 root.addEventListener('mousedown', function(a) {if(a.button !== 0) return; ar(true); });
 root.addEventListener('mouseup', function(a) { if(a.button !== 0) return; toggleImage(false); });
 
