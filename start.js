@@ -47,7 +47,7 @@ punching.onended = function () {
 
 toggleImage(false);
 
-root.addEventListener('mousedown', function(a) {if(a.button !== 0) return; mud(true); });
+root.addEventListener('mousedown', function(a) {if(a.button !== 0) return; ar(true); });
 root.addEventListener('mouseup', function(a) { if(a.button !== 0) return; toggleImage(false); });
 root.addEventListener('touchstart', function(e) { mud(a); e.preventDefault(); });
 root.addEventListener('touchmove', function(e) { e.preventDefault(); });
