@@ -9,11 +9,16 @@ var counter = 0;
 var isVidRunning = false;
 
 var audio = new Audio('sound.mp3');
+audio.play();
 
 function toggleImage(down) {
-    audio.play();
-    imageNormal.style.display = down ? 'none' : 'block';
-    imageMuda.style.display = down ? 'block' : 'none';
+    if(isVidRunning == 0){
+        imageNormal.style.display = down ? 'none' : 'block';
+        imageMuda.style.display = down ? 'block' : 'none';
+    } 
+    else{
+        punching.play();
+    }
 }
 
 function ar(i) {
@@ -42,9 +47,9 @@ punching.onended = function () {
 
 toggleImage(false);
 
-root.addEventListener('mousedown', function(a) {if(a.button !== 0) return; ar(true);});
-root.addEventListener('mouseup', function(a) {if(a.button !== 0) return; ar(false);});
-
-root.addEventListener('touchstart', function(e) { ar(a); e.preventDefault(); });
-root.addEventListener('touchend', function(e) { ar(a); });
-root.addEventListener('touchcancel', function(e) { ar(a); });
+root.addEventListener('mousedown', function(a) {if(a.button !== 0) return; mud(a); });
+root.addEventListener('mouseup', function(a) { if(a.button !== 0) return; toggleImage(false); });
+root.addEventListener('touchstart', function(e) { mud(a); e.preventDefault(); });
+root.addEventListener('touchmove', function(e) { e.preventDefault(); });
+root.addEventListener('touchend', function(e) { toggleImage(false); });
+root.addEventListener('touchcancel', function(e) { toggleImage(false); });
