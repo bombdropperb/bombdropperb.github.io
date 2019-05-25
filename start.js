@@ -32,6 +32,7 @@ function ar(i) {
         imageNormal.style.display = 'none';
         imageMuda.style.display = 'none';
         punching.style.display = 'block';
+        audio.pause();
         punching.play();
     }
 
