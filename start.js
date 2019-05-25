@@ -27,7 +27,7 @@ function ar(i) {
 
     toggleImage(i);
 
-    if (++counter % 7 == 0) {
+    if (++counter % 5 == 0) {
         isVidRunning = true;
         imageNormal.style.display = 'none';
         imageMuda.style.display = 'none';
